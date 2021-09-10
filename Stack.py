@@ -1,7 +1,6 @@
 class Stack:
 
     def __init__(self):
-
         self.list = []
 
     def is_Empty(self):
