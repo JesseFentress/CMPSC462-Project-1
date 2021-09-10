@@ -1,16 +1,24 @@
-# This is a sample Python script.
+from Stack import Stack
+from Queue import Queue
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+s = Stack()
+print(s.is_Empty())
+s.push('cat')
+s.push('thunder')
+s.push('okay')
+print(s.pop())
+print(s.size())
+print(s.peek())
+print(s.list)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+q = Queue()
+q.enqueue(33)
+q.enqueue(4)
+q.enqueue(58)
+print(q.list)
+print(q.dequeue())
+print(q.size())
+print(q.is_Empty())
+print(q.list)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
