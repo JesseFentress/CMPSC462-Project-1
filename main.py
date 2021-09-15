@@ -3,7 +3,7 @@ from Queue import Queue
 from Deque import Deque
 from StackTower import StackTower
 
-###################################################################
+##################################################################
 # Part-1: Stack, Queue, and Deque class testing
 
 # Stack class testing
@@ -62,10 +62,10 @@ print("Deque size: ", end=" ")
 print(d.size())
 print()
 
-###################################################################
+##################################################################
 # Part-2: Application
 # Towers of Hanoi
-###################################################################
+##################################################################
 
 print("Towers of Hanoi")
 game = StackTower(5)
