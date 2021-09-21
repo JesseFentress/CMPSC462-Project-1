@@ -39,7 +39,7 @@ class StackTower:
         # I found this method for iterating through multiple lists on geeksforgeeks, itertools.zip_longest takes
         # all the lists as arguments and will iterate through them all until they are all exhausted, the final
         # argument fillvalue will replace any empty indices for an exhausted list, this is purely for printing purposes
-        for (s, a, e) in itertools.zip_longest(self.start.list, self.aux.list, self.end.list, fillvalue="|"):
+        for (s, a, e) in itertools.zip_longest(reversed(self.start.list), reversed(self.aux.list), reversed(self.end.list), fillvalue="|"):
             print(s, a, e)
 
     def play(self):

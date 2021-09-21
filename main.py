@@ -2,6 +2,9 @@ from Stack import Stack
 from Queue import Queue
 from Deque import Deque
 from StackTower import StackTower
+from BusLine import BusLine
+from Student import Student
+from Bus import Bus
 
 ##################################################################
 # Part-1: Stack, Queue, and Deque class testing
@@ -64,9 +67,42 @@ print()
 
 ##################################################################
 # Part-2: Application
-# Towers of Hanoi
+# A: Towers of Hanoi
 ##################################################################
 
 print("Towers of Hanoi")
 game = StackTower(5)
 game.play()
+
+##################################################################
+# B: Students lining up to get on the bus for a field trip are boarded onto the bus using a FIFO order, like queue.
+#    However, when getting off of the bus they are getting off using a LIFO order, like a stack.
+##################################################################
+
+line = BusLine()
+bus = Bus()
+studentA = Student("John")
+studentB = Student("Maria")
+studentC = Student("Mark")
+studentD = Student("Rich")
+studentE = Student("Sara")
+line.getInLine(studentA)
+line.getInLine(studentB)
+line.getInLine(studentC)
+line.getInLine(studentD)
+line.getInLine(studentE)
+
+
+
+def boarding(line, bus):
+
+    while line.size() > 0:
+        bus.getOnBus(line.getOutOfLine())
+
+
+def exitting(bus):
+    while bus.size() > 0:
+        bus.getOffBus()
+
+boarding(line, bus)
+exitting(bus)
