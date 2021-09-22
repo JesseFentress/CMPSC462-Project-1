@@ -1,5 +1,4 @@
 from Queue import Queue
-from Student import Student
 
 # Class that uses queue to simulate a bus line, first students in the line should be the first out
 

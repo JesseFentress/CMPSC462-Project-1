@@ -81,7 +81,7 @@ print()
 #    However, when getting off of the bus they are getting off using a LIFO order, like a stack.
 ##################################################################
 
-print("Bus line simulation: Using queue and stack")
+print("#### Bus line simulation: Using queue and stack ####")
 print()
 line = BusLine()
 bus = Bus()
@@ -111,6 +111,7 @@ def exiting(bus):
 
 boarding(line, bus)
 exiting(bus)
+print()
 
 ##################################################################
 # C: Simulated chess allows you to make moves, undo moves, and redo moves. Moves that are done are added to the front
@@ -118,6 +119,9 @@ exiting(bus)
 # the deque in case a player chooses to redo the last undone move. Redone moves are removed from the rear of the deque
 # and added back to the front.
 ##################################################################
+
+print("#### Chess moves simulate: Using deque ####")
+print()
 
 g = Chess()
 print(g.history.list)
