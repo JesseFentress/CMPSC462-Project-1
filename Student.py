@@ -1,3 +1,5 @@
+# Basic student class that just holds student names
+
 class Student:
 
     def __init__(self, name):

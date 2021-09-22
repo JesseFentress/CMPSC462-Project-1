@@ -5,6 +5,7 @@ from StackTower import StackTower
 from BusLine import BusLine
 from Student import Student
 from Bus import Bus
+from Chess import Chess
 
 ##################################################################
 # Part-1: Stack, Queue, and Deque class testing
@@ -73,12 +74,15 @@ print()
 print("Towers of Hanoi")
 game = StackTower(5)
 game.play()
+print()
 
 ##################################################################
 # B: Students lining up to get on the bus for a field trip are boarded onto the bus using a FIFO order, like queue.
 #    However, when getting off of the bus they are getting off using a LIFO order, like a stack.
 ##################################################################
 
+print("Bus line simulation: Using queue and stack")
+print()
 line = BusLine()
 bus = Bus()
 studentA = Student("John")
@@ -93,16 +97,37 @@ line.getInLine(studentD)
 line.getInLine(studentE)
 
 
-
+# This function will board all of the students onto the bus
 def boarding(line, bus):
-
     while line.size() > 0:
         bus.getOnBus(line.getOutOfLine())
 
 
-def exitting(bus):
+# This function will take all the students off of the bus
+def exiting(bus):
     while bus.size() > 0:
         bus.getOffBus()
 
+
 boarding(line, bus)
-exitting(bus)
+exiting(bus)
+
+##################################################################
+# C: Simulated chess allows you to make moves, undo moves, and redo moves. Moves that are done are added to the front
+# of the deque, and if a move is undone it will be removed from the front of the deque and added to the rear of the
+# the deque in case a player chooses to redo the last undone move. Redone moves are removed from the rear of the deque
+# and added back to the front.
+##################################################################
+
+g = Chess()
+print(g.history.list)
+g.move(("knight", "h2"))
+print(g.history.list)
+g.move(("pawn", "j4"))
+print(g.history.list)
+g.undo()
+print(g.history.list)
+g.move(("queen", "c7"))
+print(g.history.list)
+g.redo()
+print(g.history.list)
